@@ -1,9 +1,9 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  // Instantiate inside handler so missing env var doesn't crash next build
+  const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   const { name, email, phone, subject, message } = await request.json();
 
   if (!name || !email || !subject || !message) {
