@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -22,14 +23,13 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-700 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-lg font-bold"
-            style={{ color: "#1a3a1a" }}
+            className="flex items-center gap-2 text-lg font-bold text-[#1a3a1a] dark:text-green-300"
           >
             <span className="text-2xl" aria-hidden="true">
               蒼湖
@@ -54,7 +54,7 @@ export default function Nav() {
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-[#1a3a1a] text-white"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-[#1a3a1a]"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 hover:text-[#1a3a1a] dark:hover:text-green-300"
                   }`}
                 >
                   {link.label}
@@ -63,42 +63,48 @@ export default function Nav() {
             })}
           </nav>
 
-          {/* Hamburger button */}
-          <button
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={menuOpen}
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Right side: theme toggle + hamburger */}
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+
+            {/* Hamburger button */}
+            <button
+              className="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={menuOpen}
             >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                {menuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
         <nav
-          className="lg:hidden bg-white border-t border-gray-200 px-4 pb-4"
+          className="lg:hidden bg-white dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-700 px-4 pb-4"
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col gap-1 pt-2">
@@ -115,7 +121,7 @@ export default function Nav() {
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-[#1a3a1a] text-white"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-[#1a3a1a]"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 hover:text-[#1a3a1a] dark:hover:text-green-300"
                   }`}
                 >
                   {link.label}

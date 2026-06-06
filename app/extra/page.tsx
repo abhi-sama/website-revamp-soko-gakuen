@@ -23,34 +23,34 @@ const usefulLinks = [
 
 export default function ExtraPage() {
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Resources</span>
+          <span className="text-gray-900 dark:text-gray-100">Resources</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4">
           Resources &amp; Grades Repository
         </h1>
-        <p className="text-gray-600 mb-10 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-3xl">
           Useful resources for Soko Gakuen students and the broader Japanese
           language learning community.
         </p>
 
         <div className="space-y-6 max-w-3xl">
           {/* Grades Repository */}
-          <Card className="bg-white shadow-sm">
+          <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 Student Grades Repository
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 text-sm leading-relaxed space-y-3">
+            <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-3">
               <p>
                 Soko Gakuen maintains a digitized Student Grades Repository for
                 secure, long-term storage of academic records. Students who need
@@ -61,14 +61,14 @@ export default function ExtraPage() {
                 Contact:{" "}
                 <a
                   href="mailto:sokogakuen@gmail.com"
-                  className="text-[#1a3a1a] hover:underline"
+                  className="text-[#1a3a1a] dark:text-green-300 hover:underline"
                 >
                   sokogakuen@gmail.com
                 </a>{" "}
                 or{" "}
                 <a
                   href="tel:4159289608"
-                  className="text-[#1a3a1a] hover:underline"
+                  className="text-[#1a3a1a] dark:text-green-300 hover:underline"
                 >
                   415-928-9608
                 </a>
@@ -77,13 +77,13 @@ export default function ExtraPage() {
           </Card>
 
           {/* Video */}
-          <Card className="bg-white shadow-sm">
+          <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 About Our School — Video
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 text-sm leading-relaxed space-y-3">
+            <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-3">
               <p>
                 Watch a short 3-minute video about Soko Gakuen Japanese Language
                 School on Vimeo.
@@ -92,8 +92,7 @@ export default function ExtraPage() {
                 href="https://vimeo.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white transition-colors"
-                style={{ backgroundColor: "#1a3a1a" }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white bg-[#1a3a1a] hover:bg-[#2a5a2a] transition-colors"
               >
                 <svg
                   className="w-4 h-4"
@@ -109,9 +108,9 @@ export default function ExtraPage() {
           </Card>
 
           {/* Useful Links */}
-          <Card className="bg-white shadow-sm">
+          <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 Useful Links
               </CardTitle>
             </CardHeader>
@@ -123,7 +122,7 @@ export default function ExtraPage() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-[#1a3a1a] hover:underline flex items-center gap-1"
+                      className="text-sm font-medium text-[#1a3a1a] dark:text-green-300 hover:underline flex items-center gap-1"
                     >
                       {link.label}
                       <svg
@@ -141,7 +140,7 @@ export default function ExtraPage() {
                         />
                       </svg>
                     </a>
-                    <p className="text-xs text-gray-500">{link.description}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{link.description}</p>
                   </li>
                 ))}
               </ul>
@@ -152,7 +151,7 @@ export default function ExtraPage() {
         <div className="mt-10">
           <Link
             href="/"
-            className="inline-flex items-center text-sm text-[#1a3a1a] hover:underline"
+            className="inline-flex items-center text-sm text-[#1a3a1a] dark:text-green-300 hover:underline"
           >
             &larr; Back to Home
           </Link>
