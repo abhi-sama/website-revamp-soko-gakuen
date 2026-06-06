@@ -6,7 +6,7 @@ import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch — only render the icon after mount
@@ -19,7 +19,9 @@ export function ThemeToggle() {
     return <div className="size-8" aria-hidden="true" />;
   }
 
-  const isDark = theme === "dark";
+  // resolvedTheme is always "light" or "dark" (accounts for "system" preference),
+  // whereas theme can be "system" and would never equal "dark" on first visit.
+  const isDark = resolvedTheme === "dark";
 
   return (
     <Button
