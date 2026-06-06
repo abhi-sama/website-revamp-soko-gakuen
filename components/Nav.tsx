@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -31,9 +32,14 @@ export default function Nav() {
             className="flex items-center gap-2 text-lg font-bold"
             style={{ color: "#1a3a1a" }}
           >
-            <span className="text-2xl" aria-hidden="true">
-              蒼湖
-            </span>
+            <Image
+              src="/symbol.gif"
+              alt="Soko Gakuen symbol"
+              width={36}
+              height={36}
+              className="w-9 h-9 object-contain flex-shrink-0"
+              unoptimized
+            />
             <span className="hidden sm:inline">Soko Gakuen</span>
           </Link>
 
