@@ -53,7 +53,9 @@ describe("POST /api/contact", () => {
       }),
     });
     const response = await POST(request);
-    expect((response as { body: { success: boolean } }).body.success).toBe(true);
+    expect(
+      ((response as unknown) as { body: { success: boolean } }).body.success
+    ).toBe(true);
   });
 
   it("includes phone field when provided", async () => {

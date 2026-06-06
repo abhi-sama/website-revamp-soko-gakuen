@@ -5,6 +5,7 @@ const quickLinks = [
   { label: "Schedule", href: "/schedule" },
   { label: "Courses", href: "/courses" },
   { label: "Enrollment", href: "/enroll" },
+  { label: "Payment", href: "/payment" },
   { label: "Faculty", href: "/faculty" },
   { label: "Scholarships", href: "/scholarships" },
   { label: "Eval & Exams", href: "/eval-exam" },

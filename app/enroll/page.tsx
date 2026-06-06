@@ -78,7 +78,15 @@ export default function EnrollPage() {
                   only.{" "}
                   <span className="text-red-600 font-medium">
                     No ePayments accepted.
-                  </span>
+                  </span>{" "}
+                  See the{" "}
+                  <Link
+                    href="/payment"
+                    className="text-[#1a3a1a] underline hover:text-[#2a5a2a]"
+                  >
+                    Payment page
+                  </Link>{" "}
+                  for mailing instructions.
                 </li>
               </ul>
             </CardContent>
@@ -274,13 +282,19 @@ export default function EnrollPage() {
           </Card>
         </div>
 
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/schedule"
             className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white"
             style={{ backgroundColor: "#1a3a1a" }}
           >
             View Schedule
+          </Link>
+          <Link
+            href="/payment"
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border-2 border-[#b8860b] text-[#b8860b] hover:bg-[#b8860b] hover:text-white transition-colors"
+          >
+            Payment &amp; Notification
           </Link>
           <Link
             href="/contact"
