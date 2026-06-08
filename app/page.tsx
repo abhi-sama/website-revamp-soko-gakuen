@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -30,8 +31,16 @@ export default function HomePage() {
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-[#f0f4e8] via-[#e8f0e8] to-[#fafaf7] dark:from-zinc-800 dark:via-zinc-900 dark:to-background">
         <div className="max-w-4xl mx-auto">
-          <div className="text-5xl mb-4" aria-hidden="true">
-            蒼湖
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/birdtitle.gif"
+              alt="Soko Gakuen Japanese Language School"
+              width={541}
+              height={313}
+              className="max-w-full h-auto w-auto"
+              priority
+              unoptimized
+            />
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4 leading-tight">
             Most Comprehensive Japanese Language School in California
