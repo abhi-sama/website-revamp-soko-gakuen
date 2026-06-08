@@ -104,24 +104,24 @@ const committee = [
 
 export default function FacultyPage() {
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Faculty</span>
+          <span className="text-gray-900 dark:text-gray-100">Faculty</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300 mb-2">
           Faculty
         </h1>
-        <p className="text-gray-600 mb-4 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
           Soko Gakuen, San Francisco&apos;s nonprofit Japanese language school
         </p>
-        <p className="text-gray-700 mb-10 max-w-3xl bg-white rounded-lg p-4 shadow-sm text-sm leading-relaxed border-l-4 border-[#1a3a1a]">
+        <p className="text-gray-700 dark:text-gray-300 mb-10 max-w-3xl bg-white dark:bg-zinc-800 rounded-lg p-4 shadow-sm text-sm leading-relaxed border-l-4 border-[#1a3a1a] dark:border-green-400">
           Soko Gakuen teachers are dedicated bilingual professionals and native
           Japanese speakers who hold master&apos;s degrees in second language
           teaching or related fields.
@@ -129,10 +129,10 @@ export default function FacultyPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {faculty.map((member) => (
-            <Card key={member.name} className="bg-white shadow-sm">
+            <Card key={member.name} className="shadow-sm">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-base text-[#1a3a1a]">
+                  <CardTitle className="text-base text-[#1a3a1a] dark:text-green-300">
                     {member.name}
                   </CardTitle>
                   <Badge
@@ -143,12 +143,12 @@ export default function FacultyPage() {
                   </Badge>
                 </div>
               </CardHeader>
-              <CardContent className="text-sm text-gray-700 space-y-2">
+              <CardContent className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
                 <ul className="space-y-1">
                   {member.credentials.map((c) => (
                     <li key={c} className="flex gap-2">
                       <span
-                        className="mt-1.5 inline-block w-1.5 h-1.5 rounded-full bg-[#b8860b] flex-shrink-0"
+                        className="mt-1.5 inline-block w-1.5 h-1.5 rounded-full bg-[#b8860b] dark:bg-amber-400 flex-shrink-0"
                         aria-hidden="true"
                       />
                       <span>{c}</span>
@@ -156,7 +156,7 @@ export default function FacultyPage() {
                   ))}
                 </ul>
                 {member.experience && (
-                  <p className="text-gray-500 text-xs pt-1">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs pt-1">
                     {member.experience}
                   </p>
                 )}
@@ -166,9 +166,9 @@ export default function FacultyPage() {
         </div>
 
         {/* Academic Affairs Committee */}
-        <Card className="bg-white shadow-sm max-w-3xl">
+        <Card className="shadow-sm max-w-3xl">
           <CardHeader>
-            <CardTitle className="text-lg text-[#1a3a1a]">
+            <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
               Academic Affairs Committee
             </CardTitle>
           </CardHeader>
@@ -188,14 +188,13 @@ export default function FacultyPage() {
         <div className="mt-10 flex gap-4">
           <Link
             href="/courses"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white"
-            style={{ backgroundColor: "#1a3a1a" }}
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white bg-[#1a3a1a] hover:bg-[#2a5a2a] transition-colors"
           >
             Course Descriptions
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] text-[#1a3a1a] hover:bg-[#1a3a1a] hover:text-white transition-colors"
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300 hover:bg-[#1a3a1a] dark:hover:bg-green-300 hover:text-white dark:hover:text-zinc-900 transition-colors"
           >
             Contact Us
           </Link>

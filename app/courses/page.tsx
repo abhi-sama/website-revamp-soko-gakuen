@@ -82,29 +82,29 @@ const courses = [
 ];
 
 const levelColors: Record<string, string> = {
-  Beginner: "bg-green-100 text-green-800",
-  "Beginner–Intermediate": "bg-blue-100 text-blue-800",
-  Intermediate: "bg-yellow-100 text-yellow-800",
-  Advanced: "bg-red-100 text-red-800",
+  Beginner: "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300",
+  "Beginner–Intermediate": "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300",
+  Intermediate: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300",
+  Advanced: "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300",
 };
 
 export default function CoursesPage() {
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Course Descriptions</span>
+          <span className="text-gray-900 dark:text-gray-100">Course Descriptions</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4">
           Course Descriptions
         </h1>
-        <p className="text-gray-600 mb-10 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-3xl">
           Soko Gakuen offers a comprehensive range of Japanese language courses
           from absolute beginners through advanced levels, including JLPT
           preparation. Each course meets once a week for 3 hours over 11 weeks
@@ -113,36 +113,36 @@ export default function CoursesPage() {
 
         <div className="space-y-6">
           {courses.map((course, idx) => (
-            <Card key={course.id} className="bg-white shadow-sm">
+            <Card key={course.id} className="shadow-sm">
               <CardHeader className="pb-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <CardTitle className="text-lg text-[#1a3a1a]">
+                  <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                     {course.title}
                   </CardTitle>
                   <span
                     className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                      levelColors[course.level] ?? "bg-gray-100 text-gray-700"
+                      levelColors[course.level] ?? "bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-gray-300"
                     }`}
                   >
                     {course.level}
                   </span>
                 </div>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   <span className="font-medium">Textbook:</span>{" "}
                   {course.textbook}
                 </p>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                   {course.description}
                 </p>
                 {course.note && (
-                  <p className="text-sm bg-amber-50 text-amber-800 rounded px-3 py-1.5">
+                  <p className="text-sm bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300 rounded px-3 py-1.5">
                     {course.note}
                   </p>
                 )}
                 {course.prereq && (
-                  <p className="text-sm bg-blue-50 text-blue-800 rounded px-3 py-1.5">
+                  <p className="text-sm bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 rounded px-3 py-1.5">
                     <strong>Prerequisite:</strong> {course.prereq}
                   </p>
                 )}
@@ -159,14 +159,13 @@ export default function CoursesPage() {
         <div className="mt-10 flex gap-4">
           <Link
             href="/schedule"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white"
-            style={{ backgroundColor: "#1a3a1a" }}
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white bg-[#1a3a1a] hover:bg-[#2a5a2a] transition-colors"
           >
             View Schedule
           </Link>
           <Link
             href="/enroll"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] text-[#1a3a1a] hover:bg-[#1a3a1a] hover:text-white transition-colors"
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300 hover:bg-[#1a3a1a] dark:hover:bg-green-300 hover:text-white dark:hover:text-zinc-900 transition-colors"
           >
             How to Enroll
           </Link>

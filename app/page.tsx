@@ -26,23 +26,17 @@ const quickLinks = [
 
 export default function HomePage() {
   return (
-    <div className="bg-[#fafaf7]">
+    <div className="bg-[#fafaf7] dark:bg-background">
       {/* Hero */}
-      <section
-        className="py-20 px-4 sm:px-6 lg:px-8 text-center"
-        style={{
-          background:
-            "linear-gradient(135deg, #f0f4e8 0%, #e8f0e8 50%, #fafaf7 100%)",
-        }}
-      >
+      <section className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-[#f0f4e8] via-[#e8f0e8] to-[#fafaf7] dark:from-zinc-800 dark:via-zinc-900 dark:to-background">
         <div className="max-w-4xl mx-auto">
           <div className="text-5xl mb-4" aria-hidden="true">
             蒼湖
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a3a1a] mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4 leading-tight">
             Most Comprehensive Japanese Language School in California
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8">
             Since 1915 &middot; Nonprofit &middot; San Francisco
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -59,7 +53,7 @@ export default function HomePage() {
               href="/enroll"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "border-[#b8860b] text-[#b8860b] hover:bg-[#b8860b] hover:text-white px-8"
+                "border-[#b8860b] text-[#b8860b] dark:text-amber-400 dark:border-amber-400 hover:bg-[#b8860b] dark:hover:bg-amber-400 hover:text-white px-8"
               )}
             >
               Enroll Now
@@ -71,13 +65,13 @@ export default function HomePage() {
       {/* About */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Card className="bg-white shadow-sm">
+          <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="text-2xl text-[#1a3a1a]">
+              <CardTitle className="text-2xl text-[#1a3a1a] dark:text-green-300">
                 About Soko Gakuen
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 space-y-3 leading-relaxed">
+            <CardContent className="text-gray-700 dark:text-gray-300 space-y-3 leading-relaxed">
               <p>
                 Soko Gakuen Japanese Language School is a nonprofit organization
                 affiliated with the Buddhist Church of San Francisco. Founded in
@@ -103,24 +97,21 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section
-        className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ backgroundColor: "#f0f4e8" }}
-      >
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f0f4e8] dark:bg-muted">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] dark:text-green-300 text-center mb-10">
             Why Choose Soko Gakuen?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-white shadow-sm">
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg text-[#1a3a1a]">
+                <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                   Lowest Tuition
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-700">
-                <p className="text-3xl font-bold text-[#b8860b] mb-2">$260</p>
-                <p className="text-sm text-gray-500 mb-3">
+              <CardContent className="text-gray-700 dark:text-gray-300">
+                <p className="text-3xl font-bold text-[#b8860b] dark:text-amber-400 mb-2">$260</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
                   per 11-week course (33 contact hours &mdash; ~$8/hr)
                 </p>
                 <p>
@@ -131,13 +122,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-sm">
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg text-[#1a3a1a]">
+                <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                   Expert Faculty
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-700">
+              <CardContent className="text-gray-700 dark:text-gray-300">
                 <p>
                   All instructors are native Japanese speakers and bilingual
                   professionals holding master's or doctoral degrees in Japanese
@@ -147,13 +138,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-sm">
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg text-[#1a3a1a]">
+                <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                   Flexible Schedule
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-700">
+              <CardContent className="text-gray-700 dark:text-gray-300">
                 <p>
                   Classes available on <strong>Saturday mornings</strong> (9
                   AM&ndash;12 PM), <strong>Saturday afternoons</strong> (1
@@ -170,30 +161,29 @@ export default function HomePage() {
       {/* Upcoming Terms */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] dark:text-green-300 text-center mb-10">
             Upcoming Terms
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {terms.map((term) => (
               <Card
                 key={term.name}
-                className="bg-white shadow-sm text-center hover:shadow-md transition-shadow"
+                className="shadow-sm text-center hover:shadow-md transition-shadow"
               >
                 <CardHeader className="pb-2">
                   <Badge
-                    className="w-fit mx-auto mb-2"
-                    style={{ backgroundColor: "#1a3a1a" }}
+                    className="w-fit mx-auto mb-2 bg-[#1a3a1a] text-white"
                   >
                     {term.year}
                   </Badge>
-                  <CardTitle className="text-base text-[#1a3a1a]">
+                  <CardTitle className="text-base text-[#1a3a1a] dark:text-green-300">
                     {term.name}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600 mb-3">{term.dates}</p>
-                  <p className="text-xl font-bold text-[#b8860b]">$260</p>
-                  <p className="text-xs text-gray-500">per course</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{term.dates}</p>
+                  <p className="text-xl font-bold text-[#b8860b] dark:text-amber-400">$260</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">per course</p>
                 </CardContent>
               </Card>
             ))}
@@ -203,7 +193,7 @@ export default function HomePage() {
               href="/schedule"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "border-[#1a3a1a] text-[#1a3a1a] hover:bg-[#1a3a1a] hover:text-white"
+                "border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300 hover:bg-[#1a3a1a] dark:hover:bg-green-300 hover:text-white dark:hover:text-zinc-900"
               )}
             >
               See Full Schedule
@@ -213,12 +203,9 @@ export default function HomePage() {
       </section>
 
       {/* Quick Links */}
-      <section
-        className="py-16 px-4 sm:px-6 lg:px-8"
-        style={{ backgroundColor: "#f0f4e8" }}
-      >
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f0f4e8] dark:bg-muted">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3a1a] dark:text-green-300 text-center mb-10">
             Explore
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -226,10 +213,10 @@ export default function HomePage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:bg-[#1a3a1a] hover:text-white group transition-all"
+                className="bg-white dark:bg-zinc-800 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:bg-[#1a3a1a] dark:hover:bg-[#1a3a1a] hover:text-white group transition-all"
               >
                 <div className="text-2xl mb-2">{link.icon}</div>
-                <p className="text-sm font-medium text-gray-700 group-hover:text-white transition-colors">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors">
                   {link.label}
                 </p>
               </Link>
@@ -242,8 +229,7 @@ export default function HomePage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <Card
-            className="text-white"
-            style={{ backgroundColor: "#1a3a1a" }}
+            className="text-white bg-[#1a3a1a]"
           >
             <CardHeader>
               <CardTitle className="text-xl text-white">

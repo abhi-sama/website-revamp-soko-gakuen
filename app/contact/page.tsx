@@ -50,21 +50,21 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Contact</span>
+          <span className="text-gray-900 dark:text-gray-100">Contact</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4">
           Contact Us
         </h1>
-        <p className="text-gray-600 mb-10 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-3xl">
           Have questions about our courses, enrollment, or anything else? We&apos;d
           love to hear from you.
         </p>
@@ -72,28 +72,28 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl">
           {/* Contact info */}
           <div className="space-y-6">
-            <Card className="bg-white shadow-sm">
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg text-[#1a3a1a]">
+                <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                   Get in Touch
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-gray-700">
+              <CardContent className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                 <div>
                   <p className="font-medium mb-1">Address</p>
-                  <address className="not-italic text-gray-600 leading-relaxed">
+                  <address className="not-italic text-gray-600 dark:text-gray-400 leading-relaxed">
                     440 Austin Street Educational Building
                     <br />
                     San Francisco, CA 94109
                     <br />
-                    <span className="text-gray-400 text-xs">
+                    <span className="text-gray-400 dark:text-gray-500 text-xs">
                       (Buddhist Church of San Francisco)
                     </span>
                   </address>
                 </div>
                 <div>
                   <p className="font-medium mb-1">Mailing Address</p>
-                  <address className="not-italic text-gray-600">
+                  <address className="not-italic text-gray-600 dark:text-gray-400">
                     1881 Pine Street
                     <br />
                     San Francisco, CA 94109
@@ -103,7 +103,7 @@ export default function ContactPage() {
                   <p className="font-medium mb-1">Phone</p>
                   <a
                     href="tel:4159289608"
-                    className="text-[#1a3a1a] hover:underline"
+                    className="text-[#1a3a1a] dark:text-green-300 hover:underline"
                   >
                     415-928-9608
                   </a>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   <p className="font-medium mb-1">Email</p>
                   <a
                     href="mailto:sokogakuen@gmail.com"
-                    className="text-[#1a3a1a] hover:underline"
+                    className="text-[#1a3a1a] dark:text-green-300 hover:underline"
                   >
                     sokogakuen@gmail.com
                   </a>
@@ -120,22 +120,22 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white shadow-sm">
-              <CardContent className="pt-5 text-sm text-gray-700 space-y-2">
-                <p className="font-medium text-[#1a3a1a]">Quick Links</p>
+            <Card className="shadow-sm">
+              <CardContent className="pt-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <p className="font-medium text-[#1a3a1a] dark:text-green-300">Quick Links</p>
                 <ul className="space-y-1">
                   <li>
-                    <Link href="/enroll" className="text-[#1a3a1a] hover:underline">
+                    <Link href="/enroll" className="text-[#1a3a1a] dark:text-green-300 hover:underline">
                       How to Enroll
                     </Link>
                   </li>
                   <li>
-                    <Link href="/schedule" className="text-[#1a3a1a] hover:underline">
+                    <Link href="/schedule" className="text-[#1a3a1a] dark:text-green-300 hover:underline">
                       Class Schedule
                     </Link>
                   </li>
                   <li>
-                    <Link href="/directions" className="text-[#1a3a1a] hover:underline">
+                    <Link href="/directions" className="text-[#1a3a1a] dark:text-green-300 hover:underline">
                       Directions
                     </Link>
                   </li>
@@ -145,9 +145,9 @@ export default function ContactPage() {
           </div>
 
           {/* Contact form */}
-          <Card className="bg-white shadow-sm">
+          <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 Send Us a Message
               </CardTitle>
             </CardHeader>
@@ -157,10 +157,10 @@ export default function ContactPage() {
                   <div className="text-4xl mb-3" aria-hidden="true">
                     ✓
                   </div>
-                  <h3 className="text-lg font-semibold text-[#1a3a1a] mb-2">
+                  <h3 className="text-lg font-semibold text-[#1a3a1a] dark:text-green-300 mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                     Thank you for reaching out. We&apos;ll get back to you as soon
                     as possible.
                   </p>
@@ -168,7 +168,7 @@ export default function ContactPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => setFormState("idle")}
-                    className="border-[#1a3a1a] text-[#1a3a1a]"
+                    className="border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300"
                   >
                     Send Another Message
                   </Button>
@@ -242,7 +242,7 @@ export default function ContactPage() {
                   </div>
 
                   {formState === "error" && (
-                    <p className="text-sm text-red-600 bg-red-50 rounded px-3 py-2">
+                    <p className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded px-3 py-2" role="alert">
                       {errorMessage}
                     </p>
                   )}
@@ -250,8 +250,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={formState === "loading"}
-                    className="w-full text-white"
-                    style={{ backgroundColor: "#1a3a1a" }}
+                    className="w-full text-white bg-[#1a3a1a] hover:bg-[#2a5a2a]"
                   >
                     {formState === "loading" ? "Sending…" : "Send Message"}
                   </Button>

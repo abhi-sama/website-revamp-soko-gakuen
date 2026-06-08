@@ -74,30 +74,30 @@ const sessions: Session[] = [satMorning, satAfternoon, monEvening, wedEvening];
 
 export default function SchedulePage() {
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Class Schedule</span>
+          <span className="text-gray-900 dark:text-gray-100">Class Schedule</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4">
           Class Schedule
         </h1>
-        <p className="text-gray-600 mb-8 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
           Soko Gakuen offers four 11-week Japanese language sessions (one
           quarter: 11 weeks, 33 contact hours) each year. Classes meet once a
           week for 3-hour sessions.
         </p>
 
         {/* Term table */}
-        <Card className="mb-10 bg-white shadow-sm">
+        <Card className="mb-10 shadow-sm">
           <CardHeader>
-            <CardTitle className="text-[#1a3a1a]">
+            <CardTitle className="text-[#1a3a1a] dark:text-green-300">
               Upcoming Term Dates &mdash; $260 per course
             </CardTitle>
           </CardHeader>
@@ -105,14 +105,14 @@ export default function SchedulePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 pr-4 font-semibold text-gray-700">
+                  <tr className="border-b dark:border-zinc-700">
+                    <th className="text-left py-2 pr-4 font-semibold text-gray-700 dark:text-gray-300">
                       Term
                     </th>
-                    <th className="text-left py-2 pr-4 font-semibold text-gray-700">
+                    <th className="text-left py-2 pr-4 font-semibold text-gray-700 dark:text-gray-300">
                       Dates
                     </th>
-                    <th className="text-left py-2 font-semibold text-gray-700">
+                    <th className="text-left py-2 font-semibold text-gray-700 dark:text-gray-300">
                       Tuition
                     </th>
                   </tr>
@@ -121,11 +121,11 @@ export default function SchedulePage() {
                   {terms.map((t, i) => (
                     <tr
                       key={t.name}
-                      className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                      className={i % 2 === 0 ? "bg-gray-50 dark:bg-zinc-800/50" : ""}
                     >
                       <td className="py-2 pr-4 font-medium">{t.name}</td>
-                      <td className="py-2 pr-4 text-gray-600">{t.dates}</td>
-                      <td className="py-2 text-[#b8860b] font-semibold">
+                      <td className="py-2 pr-4 text-gray-600 dark:text-gray-400">{t.dates}</td>
+                      <td className="py-2 text-[#b8860b] dark:text-amber-400 font-semibold">
                         $260
                       </td>
                     </tr>
@@ -133,7 +133,7 @@ export default function SchedulePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-sm text-gray-500 italic">
+            <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 italic">
               Late registration: a $20 surcharge applies if registered more than
               1 week after the term start date.
             </p>
@@ -141,29 +141,28 @@ export default function SchedulePage() {
         </Card>
 
         {/* Summer 2026 schedule */}
-        <h2 className="text-2xl font-bold text-[#1a3a1a] mb-6">
+        <h2 className="text-2xl font-bold text-[#1a3a1a] dark:text-green-300 mb-6">
           Summer 2026 Schedule
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {sessions.map((session) => (
-            <Card key={session.label} className="bg-white shadow-sm">
+            <Card key={session.label} className="shadow-sm">
               <CardHeader className="pb-3">
-                <CardTitle className="text-base text-[#1a3a1a]">
+                <CardTitle className="text-base text-[#1a3a1a] dark:text-green-300">
                   {session.label}
                 </CardTitle>
-                <p className="text-sm text-gray-500">{session.time}</p>
-                <p className="text-sm text-gray-500">{session.dates}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{session.time}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{session.dates}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-1">
                   {session.classes.map((cls) => (
                     <li
                       key={cls}
-                      className="text-sm text-gray-700 flex items-center gap-2"
+                      className="text-sm text-gray-700 dark:text-gray-300 flex items-center gap-2"
                     >
                       <span
-                        className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
-                        style={{ backgroundColor: "#1a3a1a" }}
+                        className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#1a3a1a] dark:bg-green-400"
                         aria-hidden="true"
                       />
                       {cls}
@@ -171,7 +170,7 @@ export default function SchedulePage() {
                   ))}
                 </ul>
                 {session.note && (
-                  <p className="mt-3 text-xs text-amber-700 bg-amber-50 rounded px-2 py-1">
+                  <p className="mt-3 text-xs text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 rounded px-2 py-1">
                     Note: {session.note}
                   </p>
                 )}
@@ -181,9 +180,9 @@ export default function SchedulePage() {
         </div>
 
         {/* Notes */}
-        <Card className="bg-white shadow-sm mb-8">
+        <Card className="shadow-sm mb-8">
           <CardContent className="pt-6">
-            <ul className="text-sm text-gray-700 space-y-2">
+            <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
               <li>
                 <strong>Class sizes:</strong> 5&ndash;19 students (average
                 5&ndash;13 per class).
@@ -210,14 +209,13 @@ export default function SchedulePage() {
         <div className="flex gap-4">
           <Link
             href="/enroll"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white"
-            style={{ backgroundColor: "#1a3a1a" }}
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white bg-[#1a3a1a] hover:bg-[#2a5a2a] transition-colors"
           >
             How to Enroll
           </Link>
           <Link
             href="/courses"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] text-[#1a3a1a] hover:bg-[#1a3a1a] hover:text-white transition-colors"
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300 hover:bg-[#1a3a1a] dark:hover:bg-green-300 hover:text-white dark:hover:text-zinc-900 transition-colors"
           >
             Course Descriptions
           </Link>

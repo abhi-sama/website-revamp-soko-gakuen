@@ -4,48 +4,46 @@ import { Badge } from "@/components/ui/badge";
 
 export default function ScholarshipsPage() {
   return (
-    <div className="bg-[#fafaf7] min-h-screen">
+    <div className="bg-[#fafaf7] dark:bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#1a3a1a]">
+        <nav className="text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-[#1a3a1a] dark:hover:text-green-300">
             Home
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Scholarships</span>
+          <span className="text-gray-900 dark:text-gray-100">Scholarships</span>
         </nav>
 
         <div className="max-w-3xl">
           {/* Header */}
           <div className="mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-3">
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a]">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3a1a] dark:text-green-300">
                 Ben Yoshikawa Scholarship
               </h1>
-              <Badge
-                className="text-sm"
-                style={{ backgroundColor: "#b8860b" }}
-              >
+              <Badge className="text-sm bg-[#b8860b] text-white">
                 $1,000 Award
               </Badge>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
               Established 2003 &middot; Revised 2016
             </p>
-            <blockquote className="mt-4 border-l-4 pl-4 italic text-gray-600 text-lg"
-              style={{ borderColor: "#1a3a1a" }}>
+            <blockquote
+              className="mt-4 border-l-4 border-[#1a3a1a] dark:border-green-400 pl-4 italic text-gray-600 dark:text-gray-400 text-lg"
+            >
               &ldquo;A Commitment To Excellence&rdquo;
             </blockquote>
           </div>
 
           {/* Award */}
-          <Card className="bg-white shadow-sm mb-6">
+          <Card className="shadow-sm mb-6">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 The Award
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 text-sm leading-relaxed">
+            <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               <p>
                 The Ben Yoshikawa Scholarship awards{" "}
                 <strong>$1,000</strong> to one qualifying student per award
@@ -55,20 +53,20 @@ export default function ScholarshipsPage() {
                 <li>Four-term tuition remission (covers a full year of courses), or</li>
                 <li>Cash equivalent ($1,000)</li>
               </ul>
-              <p className="mt-3 text-gray-500 text-xs">
+              <p className="mt-3 text-gray-500 dark:text-gray-400 text-xs">
                 Subject to Board of Directors approval and fund availability.
               </p>
             </CardContent>
           </Card>
 
           {/* Eligibility */}
-          <Card className="bg-white shadow-sm mb-6">
+          <Card className="shadow-sm mb-6">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 Eligibility Requirements
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 text-sm leading-relaxed space-y-3">
+            <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-3">
               <p>
                 To be eligible for the Ben Yoshikawa Scholarship, an applicant
                 must meet <strong>all four</strong> of the following criteria:
@@ -99,13 +97,13 @@ export default function ScholarshipsPage() {
           </Card>
 
           {/* How to Apply */}
-          <Card className="bg-white shadow-sm mb-6">
+          <Card className="shadow-sm mb-6">
             <CardHeader>
-              <CardTitle className="text-lg text-[#1a3a1a]">
+              <CardTitle className="text-lg text-[#1a3a1a] dark:text-green-300">
                 How to Apply
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-700 text-sm leading-relaxed space-y-2">
+            <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-2">
               <p>Submit your application documents to the Soko Gakuen office:</p>
               <ul className="list-disc list-inside ml-2 space-y-1">
                 <li>
@@ -128,7 +126,7 @@ export default function ScholarshipsPage() {
                 Questions? Email{" "}
                 <a
                   href="mailto:sokogakuen@gmail.com"
-                  className="text-[#1a3a1a] hover:underline"
+                  className="text-[#1a3a1a] dark:text-green-300 hover:underline"
                 >
                   sokogakuen@gmail.com
                 </a>
@@ -137,7 +135,7 @@ export default function ScholarshipsPage() {
           </Card>
 
           {/* Note */}
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+          <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg p-4 text-sm text-amber-800 dark:text-amber-300">
             <strong>Note:</strong> The scholarship is awarded subject to Board
             of Directors approval and the availability of scholarship funds.
             Soko Gakuen reserves the right to defer or adjust the award in any
@@ -148,14 +146,13 @@ export default function ScholarshipsPage() {
         <div className="mt-10 flex gap-4">
           <Link
             href="/eval-exam"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white"
-            style={{ backgroundColor: "#1a3a1a" }}
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-white bg-[#1a3a1a] hover:bg-[#2a5a2a] transition-colors"
           >
             Evaluation &amp; Exams
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] text-[#1a3a1a] hover:bg-[#1a3a1a] hover:text-white transition-colors"
+            className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium border border-[#1a3a1a] dark:border-green-300 text-[#1a3a1a] dark:text-green-300 hover:bg-[#1a3a1a] dark:hover:bg-green-300 hover:text-white dark:hover:text-zinc-900 transition-colors"
           >
             Contact Us
           </Link>
