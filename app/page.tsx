@@ -32,15 +32,25 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-[#f0f4e8] via-[#e8f0e8] to-[#fafaf7] dark:from-zinc-800 dark:via-zinc-900 dark:to-background">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
-            <Image
-              src="/birdtitle.gif"
-              alt="Soko Gakuen Japanese Language School"
-              width={541}
-              height={313}
-              className="max-w-full h-auto w-auto"
-              priority
-              unoptimized
-            />
+            {/*
+              birdtitle.gif is legacy artwork with an opaque white interior, so it
+              cannot sit directly on a dark background. Framing it on a paper-white
+              plate makes that white deliberate in both themes and absorbs the
+              GIF's ragged edge. Dimming the whole plate in dark mode moves the
+              plate and the artwork's own white together, so the seam stays
+              invisible instead of the artwork glowing brighter than its frame.
+            */}
+            <div className="max-w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm ring-1 ring-black/5 dark:shadow-xl dark:ring-white/10 dark:brightness-90">
+              <Image
+                src="/birdtitle.gif"
+                alt="Soko Gakuen Japanese Language School"
+                width={541}
+                height={313}
+                className="max-w-full h-auto w-auto"
+                priority
+                unoptimized
+              />
+            </div>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a3a1a] dark:text-green-300 mb-4 leading-tight">
             Most Comprehensive Japanese Language School in California
@@ -140,9 +150,9 @@ export default function HomePage() {
               <CardContent className="text-gray-700 dark:text-gray-300">
                 <p>
                   All instructors are native Japanese speakers and bilingual
-                  professionals holding master's or doctoral degrees in Japanese
-                  language teaching or related fields. Many also teach at SFSU,
-                  UC Berkeley, CCSF, and USF.
+                  professionals holding master&rsquo;s or doctoral degrees in
+                  Japanese language teaching or related fields. Many also teach
+                  at SFSU, UC Berkeley, CCSF, and USF.
                 </p>
               </CardContent>
             </Card>
@@ -155,11 +165,11 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="text-gray-700 dark:text-gray-300">
                 <p>
-                  Classes available on <strong>Saturday mornings</strong> (9
-                  AM&ndash;12 PM), <strong>Saturday afternoons</strong> (1
-                  PM&ndash;4 PM), <strong>Monday evenings</strong> (6
-                  PM&ndash;9 PM), and <strong>Wednesday evenings</strong> (6
-                  PM&ndash;9 PM). Something for every schedule.
+                  Classes available on <strong>Saturday mornings</strong>{" "}
+                  (9 AM&ndash;12 PM), <strong>Saturday afternoons</strong>{" "}
+                  (1 PM&ndash;4 PM), <strong>Monday evenings</strong>{" "}
+                  (6 PM&ndash;9 PM), and <strong>Wednesday evenings</strong>{" "}
+                  (6 PM&ndash;9 PM). Something for every schedule.
                 </p>
               </CardContent>
             </Card>

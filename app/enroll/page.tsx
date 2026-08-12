@@ -111,8 +111,9 @@ export default function EnrollPage() {
             <CardContent className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               <p>
                 <strong>None.</strong> Soko Gakuen has a firm{" "}
-                <em>&ldquo;No Jacking Money from the Little Guy&rdquo;</em> policy. There
-                are no application fees, enrollment fees, or hidden charges.
+                <em>&ldquo;No Jacking Money from the Little Guy&rdquo;</em>{" "}
+                policy. There are no application fees, enrollment fees, or
+                hidden charges.
               </p>
             </CardContent>
           </Card>
