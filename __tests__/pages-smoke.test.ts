@@ -83,4 +83,20 @@ describe("Root layout owns the title template", () => {
       template: expect.stringContaining("%s"),
     });
   });
+
+  // Next.js applies `title.template` to CHILD segments only. `app/page.tsx`
+  // sits in the same segment as the root layout, so it never receives the
+  // template and must carry the brand itself, or the home tab renders with no
+  // school name at all. Verified in a browser: without this the home page
+  // title was "Most Comprehensive Japanese Language School in California".
+  it("home page carries the brand itself, since the template skips it", async () => {
+    const { metadata: layout } = await import("../app/layout");
+    const { metadata: home } = await import("../app/page");
+
+    const suffix = (layout.title as { template: string }).template.replace(
+      "%s",
+      "",
+    );
+    expect(home.title).toContain(suffix.trim());
+  });
 });
