@@ -50,12 +50,14 @@ describe("Every page declares its own metadata", () => {
       const mod = await import(modulePath);
       expect(mod.metadata, `${modulePath} has no metadata export`).toBeDefined();
 
-      // A page title is either a plain string, or `{ absolute: string }`
-      // for the home page, which opts out of the root layout's template.
+      // Every page supplies a plain-string segment that the root layout's
+      // template wraps. No page opts out with `{ absolute }`, so that one
+      // strategy stays consistent across all 12.
       const { title } = mod.metadata;
-      const titleText = typeof title === "string" ? title : title?.absolute;
-      expect(typeof titleText, `${modulePath} has no usable title`).toBe("string");
-      expect(titleText!.length).toBeGreaterThan(0);
+      expect(typeof title, `${modulePath} title is not a plain string`).toBe(
+        "string",
+      );
+      expect(title.length).toBeGreaterThan(0);
 
       expect(typeof mod.metadata.description).toBe("string");
       expect(mod.metadata.description.length).toBeGreaterThan(0);
@@ -65,11 +67,7 @@ describe("Every page declares its own metadata", () => {
   it("gives every page a distinct title and description", async () => {
     const mods = await Promise.all(PAGE_MODULES.map((p) => import(p)));
 
-    const titles = mods.map((m) =>
-      typeof m.metadata.title === "string"
-        ? m.metadata.title
-        : m.metadata.title.absolute,
-    );
+    const titles = mods.map((m) => m.metadata.title);
     const descriptions = mods.map((m) => m.metadata.description);
 
     expect(new Set(titles).size).toBe(PAGE_MODULES.length);

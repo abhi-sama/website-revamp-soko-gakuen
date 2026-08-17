@@ -6,12 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
+// `title.template` in the root layout only applies to CHILD segments, so this
+// root-level page never receives it. It therefore spells out the same
+// "<segment> | Soko Gakuen" shape the other 11 pages get from the template.
 export const metadata: Metadata = {
-  title: {
-    absolute: "Soko Gakuen Japanese Language School | San Francisco Since 1915",
-  },
+  title: "Most Comprehensive Japanese Language School in California | Soko Gakuen",
   description:
-    "A nonprofit Japanese language school in San Francisco teaching every level since 1915. See upcoming terms, where classes are held, and how to enroll.",
+    "A nonprofit Japanese language school in San Francisco since 1915, affiliated with the Buddhist Church of San Francisco. See upcoming terms and how to enroll.",
 };
 
 const terms = [
