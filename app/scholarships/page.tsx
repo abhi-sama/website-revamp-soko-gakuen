@@ -116,12 +116,12 @@ export default function ScholarshipsPage() {
                   exam)
                 </li>
               </ul>
-              <p className="mt-3">
-                Mail to:{" "}
-                <address className="not-italic inline">
-                  Soko Gakuen, 440 Austin Street, San Francisco, CA 94109
-                </address>
-              </p>
+              <address className="not-italic mt-3">
+                <p>
+                  Mail to: Soko Gakuen, 440 Austin Street, San Francisco, CA
+                  94109
+                </p>
+              </address>
               <p className="mt-2">
                 Questions? Email{" "}
                 <a
