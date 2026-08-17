@@ -24,6 +24,11 @@ vi.mock("next/link", () => ({
 vi.mock("next/font/google", () => ({
   Inter: () => ({ className: "inter" }),
 }));
+// `Nav` is a client component that reads the current route. Outside a router
+// there is no pathname, so give it a stable one to server-render against.
+vi.mock("next/navigation", () => ({
+  usePathname: () => "/",
+}));
 
 /**
  * Elements whose start tag implicitly closes an open `<p>`.
@@ -130,6 +135,14 @@ describe("Server-rendered markup has no <p> nesting violations", () => {
   it("components/Footer renders valid paragraph nesting", async () => {
     const { default: Footer } = await import("../components/Footer");
     const html = renderToStaticMarkup(<Footer />);
+    expect(findInvalidParagraphNesting(html)).toEqual([]);
+  });
+
+  // Nav sits in the root layout, so a nesting mistake here would hydrate-fail
+  // on all 12 routes at once rather than on a single page.
+  it("components/Nav renders valid paragraph nesting", async () => {
+    const { default: Nav } = await import("../components/Nav");
+    const html = renderToStaticMarkup(<Nav />);
     expect(findInvalidParagraphNesting(html)).toEqual([]);
   });
 });
