@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Fast feedback: vitest only. No build, no server, no browser.
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run lint
+
+      - run: pnpm test
+
+  # Deliberately a SEPARATE job from `unit`: this one needs a production build,
+  # a running Next.js server and a real Chromium, so it is roughly an order of
+  # magnitude slower and must not gate the fast unit feedback.
+  #
+  # It guards the class of bug the unit suite structurally cannot see: anything
+  # that only surfaces as a browser console error at runtime - React hydration
+  # mismatches, uncaught TypeErrors in client components, broken assets.
+  e2e:
+    name: Console-error smoke check (production build)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Only Chromium: this check is about whether the app logs errors at all,
+      # not about cross-browser rendering. Pulling three engines would triple
+      # the job's slowest step for no extra signal.
+      - name: Install Chromium for Playwright
+        run: pnpm exec playwright install --with-deps chromium
+
+      # `playwright.config.ts` runs `pnpm run build && pnpm run start` itself,
+      # so the build lives inside this step and its failure is attributed here.
+      - name: Run console-error smoke check
+        run: pnpm run test:e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
