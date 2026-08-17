@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Class Schedule",
+  description:
+    "Soko Gakuen offers four 11-week Japanese language sessions each year, meeting once a week for 3-hour classes. View term dates and the Summer 2026 schedule.",
+};
 
 type Session = {
   label: string;

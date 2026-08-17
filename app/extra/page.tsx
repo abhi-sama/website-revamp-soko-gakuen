@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Resources & Grades Repository",
+  description:
+    "Useful resources for Soko Gakuen students and the broader Japanese language learning community, including the student grades repository and a school video.",
+};
 
 const usefulLinks = [
   {

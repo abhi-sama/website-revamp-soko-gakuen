@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  title: "Course Descriptions",
+  description:
+    "Japanese language courses from absolute beginner through advanced, including JLPT preparation. Each course meets weekly for 3 hours over 11 weeks.",
+};
 
 const courses = [
   {

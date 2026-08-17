@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  title: "Mission Statement",
+  description:
+    "Soko Gakuen, an affiliated organization of the Buddhist Church of San Francisco, has provided Japanese language instruction with integrity since 1915.",
+};
 
 export default function MissionPage() {
   return (
