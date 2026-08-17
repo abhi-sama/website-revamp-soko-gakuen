@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Evaluation & Exams",
+  description:
+    "How Soko Gakuen assesses student progress: final exams and makeup policy, progress reports, certificates of course completion, and placement testing.",
+};
 
 export default function EvalExamPage() {
   return (

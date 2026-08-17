@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Faculty",
+  description:
+    "Soko Gakuen teachers are dedicated bilingual professionals and native Japanese speakers who hold master's degrees in second language teaching or related fields.",
+};
 
 const faculty = [
   {

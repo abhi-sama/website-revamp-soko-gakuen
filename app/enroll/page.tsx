@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  title: "How to Enroll",
+  description:
+    "Enrolling at Soko Gakuen is simple. Follow the steps to register for a Japanese language course, including the registration form and accepted payment methods.",
+};
 
 export default function EnrollPage() {
   return (

@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "How to Get Here",
+  description:
+    "Soko Gakuen classes are held at the Buddhist Church of San Francisco Educational Building on Austin Street, in the Western Addition / Japantown neighborhood.",
+};
 
 export default function DirectionsPage() {
   const mapsUrl =

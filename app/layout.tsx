@@ -8,7 +8,10 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Soko Gakuen Japanese Language School",
+  title: {
+    default: "Soko Gakuen Japanese Language School",
+    template: "%s | Soko Gakuen",
+  },
   description:
     "San Francisco's most comprehensive Japanese language school since 1915. Nonprofit, quality instruction at reasonable rates.",
 };

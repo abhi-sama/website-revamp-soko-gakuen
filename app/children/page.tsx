@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Japanese Language Lessons for Children",
+  description:
+    "Japanese language lessons for children ages 5 to 14, emphasizing quality instruction in a focused and supportive learning environment.",
+};
 
 export default function ChildrenPage() {
   return (

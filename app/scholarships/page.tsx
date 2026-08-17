@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Ben Yoshikawa Scholarship",
+  description:
+    "The Ben Yoshikawa Scholarship awards $1,000 to one qualifying student per cycle, as four-term tuition remission or the cash equivalent. See eligibility rules.",
+};
 
 export default function ScholarshipsPage() {
   return (

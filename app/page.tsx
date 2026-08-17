@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Soko Gakuen Japanese Language School | San Francisco Since 1915",
+  },
+  description:
+    "A nonprofit Japanese language school in San Francisco teaching every level since 1915. See upcoming terms, where classes are held, and how to enroll.",
+};
 
 const terms = [
   { name: "Summer 2026", dates: "June 27 – Sep 12", year: "2026" },
